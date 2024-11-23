@@ -81,10 +81,17 @@ float zG;
 float xA;
 float yA;
 float zA;
-
+// File dataFile;
 void setup() {
   //Serial
   Serial.begin(115200); //Computer
+  pinMode(53, OUTPUT);
+  if (!SD.begin(53)) {
+    Serial.println("initialization failed");
+    return;
+  }
+  // dataFile = SD.open("datalog3.csv", FILE_WRITE);
+
 
 }
 
@@ -93,5 +100,6 @@ void loop() {
   sanity();
   String data = mkdata();
   Serial.println(data);
+  writeSD(data);
 
 }

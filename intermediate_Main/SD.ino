@@ -1,10 +1,11 @@
-// void writeSD(String dataString){
-//   File dataFile = SD.open("datalog.csv", FILE_WRITE);
-//   if (dataFile) {
-//     dataFile.println(dataString);
-//     dataFile.close();
-//   }
-// }
+void writeSD(String dataString){
+      File dataFile = SD.open("datalog4.csv", FILE_WRITE);
+
+  if (dataFile) {
+    dataFile.println(dataString);
+    dataFile.close();
+  }
+}
 
 String mkdata(){
   String data = 
@@ -19,6 +20,6 @@ String mkdata(){
   "ir:" + String(ir, 4) + "," +
   "lux:" + String(lux, 4) + "," + 
   "voltage1:" + String(voltage1) + "," + 
-  "voltage1:" + String(voltage2);
+  "voltage2:" + String(voltage2);
   return data;
 }
